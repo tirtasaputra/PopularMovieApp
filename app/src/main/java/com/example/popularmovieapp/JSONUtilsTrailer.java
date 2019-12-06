@@ -28,10 +28,12 @@ public class JSONUtilsTrailer {
             JSONObject trailer = trailerArray.getJSONObject(i);
 
             String youtubeUrl = YOUTUBE_URL + trailer.getString(TRAILER_URL_KEY);
+            String youtubeImage = "https://img.youtube.com/vi/"+ trailer.getString(TRAILER_URL_KEY) +"/0.jpg";
 
             Trailer trailerVM = new Trailer(
                     trailer.getString(TRAILER_TITLE),
-                    youtubeUrl
+                    youtubeUrl,
+                    youtubeImage
             );
 
             trailerVMList.add(trailerVM);

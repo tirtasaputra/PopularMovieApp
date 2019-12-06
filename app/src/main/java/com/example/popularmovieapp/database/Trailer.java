@@ -5,9 +5,13 @@ public class Trailer {
     private String trailerTittle;
     private String trailerUrlKey;
 
-    public Trailer(String trailerTittle, String trailerUrl) {
+
+    private String trailerImage;
+
+    public Trailer(String trailerTittle, String trailerUrl, String trailerImage) {
         this.trailerTittle = trailerTittle;
         this.trailerUrlKey = trailerUrl;
+        this.trailerImage = trailerImage;
     }
 
     public String getTrailerTittle() {
@@ -24,6 +28,14 @@ public class Trailer {
 
     public void setTrailerUrl(String trailerUrl) {
         this.trailerUrlKey = trailerUrl;
+    }
+
+    public String getTrailerImage() {
+        return trailerImage;
+    }
+
+    public void setTrailerImage(String trailerImage) {
+        this.trailerImage = trailerImage;
     }
 
 }

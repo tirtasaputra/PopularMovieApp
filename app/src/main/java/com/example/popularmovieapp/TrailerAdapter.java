@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.popularmovieapp.database.Trailer;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -31,6 +33,7 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerV
 
     @Override
     public void onBindViewHolder( TrailerViewHolder holder, int position) {
+        Picasso.with(context).load(dataList.get(position).getTrailerImage()).into(holder.ivTrailer);
         holder.tvTrailerTitle.setText(dataList.get(position).getTrailerTittle());
     }
 
@@ -42,10 +45,12 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerV
     public class TrailerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView tvTrailerTitle;
+        private ImageView ivTrailer;
 
         public TrailerViewHolder(View itemView) {
             super(itemView);
-            tvTrailerTitle = (TextView) itemView.findViewById(R.id.trailer_title);
+            tvTrailerTitle = itemView.findViewById(R.id.trailer_title);
+            ivTrailer = itemView.findViewById(R.id.trailer_image);
             itemView.setOnClickListener(this);
         }
 

@@ -77,7 +77,7 @@ public class DetailActivity extends AppCompatActivity implements TrailerAdapter.
 
         trailerRecyclerView = findViewById(R.id.trailer_list);
         trailerAdapter = new TrailerAdapter(trailerList, (TrailerAdapter.ListItemClickListenerTrailer) this);
-        RecyclerView.LayoutManager trailerLayoutManager = new LinearLayoutManager(DetailActivity.this);
+        RecyclerView.LayoutManager trailerLayoutManager = new LinearLayoutManager(DetailActivity.this, LinearLayoutManager.HORIZONTAL, false);
         trailerRecyclerView.setLayoutManager(trailerLayoutManager);
         trailerRecyclerView.setAdapter(trailerAdapter);
 
